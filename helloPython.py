@@ -40,6 +40,14 @@ print("10/3=", 10/3)
 print("9/3=", 9/3)#就算能整除，得到的结果也是符点数
 print("10%3=", 10%3)
 
+print("input_s是字符串，请输入整数(小数不也行)，否则报错")
+input_s = input('birth:')
+birth = int(input_s)
+if birth < 2000:
+    print('00前')
+else:
+    print('00后')
+
 PI = 3.14159265359
 print("常量一般建议全大写：PI=", PI);
 
@@ -83,10 +91,110 @@ print('Age:%s Gender:%s float:%.2f' % (25, True, 3.1415926))#如果不太确定�
 print('growth rate:%d%%' % 7)#有些时候，字符串里面的%是一个普通字符,这个时候就需要转义，用%%来表示一个%
 print('Hello, {0}, 成绩提升了 {1:.2f}'.format('小明', 17.125))#另一种格式化字符串的方法是使用字符串的format()方法，它会用传入的参数依次替换字符串内的占位符{0}、{1}……，不过这种方式写起来比%要麻烦得多
 
+print("-----------------list内容可变-----------------")
+classmates = ['Micheal', 'Bob', 'Tracy']
+list_empty = []
+print("classmates=%s len(classmates)=%d list_empty=%s" %(classmates, len(classmates), list_empty))
+print("classmates[0]=%s, classmates[1]=%s, classmates[2]=%s, classmates[3]越界 \nclassmates[-1]=%s, classmates[-2]=%s, classmates[-3]=%s, classmates[-4]越界"
+      %(classmates[0], classmates[1], classmates[2],classmates[-1], classmates[-2], classmates[-3]))
 
-print("-----------------代码块的表示----------------")
-a = -100
-if a >= 0:
+print("classmates.pop(1)=", classmates.pop(1), "classmates=", classmates)
+print("classmates.pop()=", classmates.pop(), "classmates=", classmates)
+#print("classmates.pop(1)后classmates=%s" %(classmates.pop(1), classmates))   %(classmates.pop(1))报错
+#print("classmates.pop()=%s, classmates=%s" %(classmates.pop(), classmates))  %(classmates.pop(1))报错
+
+#classmates[1] = 123            由于classmates= ['Micheal']只有一个元素了，classmates[1]赋值越界
+#classmates[2] = ['asp', 'php'] 由于classmates= ['Micheal']只有一个元素了，classmates[2]赋值越界
+#clsssmates[3] = True           由于classmates= ['Micheal']只有一个元素了，classmates[3]赋值越界
+classmates.insert(1, 123)
+classmates.insert(2, ['asp', 'php'])
+classmates.insert(3, True)
+classmates.insert(6, False)
+classmates.append('Jack')
+print("classmates=%s len(classmates)=%d classmates[2][1]=%s" %(classmates, len(classmates), classmates[2][1]))
+
+print("空list[]的长度=" , len([]))
+#print("空list[]的长度=" % len([]))         报错
+#print("空list[]的长度=" % len(list_empty)) 报错
+
+print("----------------tuple内容不可变----------------")
+print("list的pop(),insert(1,'Tom'),append(123),list[1]=2\n在tuple中全部不能用，因为tuple中的元素指向是不可用的")
+classmates = ('Micheal', 'Bob', 'Tracy')
+tuple_empty = ()
+print("classmates=%s, tuple_empty=%s" %(classmates, tuple_empty))
+print("tuple中只有一个元素表示法:t=(1)不是tuple, t(1,)才是tuple")
+
+t=('a', 'b', ['A', 'B'])
+print("t=%s", t)
+#t[2,0] = 'X'  此种写法报错
+#t[2,1] = 'Y'  此种写法报错
+t[2][0] = 'X'
+t[2][1] = 'Y'
+print("tuple的每个元素，指向永远不变,但是指向中的内容可变")
+print("t=%s", t)
+
+
+print("------------------代码块的表示-----------------")
+a = 0
+if a >= 0:#冒号代表后面缩进语句是代码块
+    print("a>=0")
     print("|a| =", a)
-else:  #冒号代表后面缩进语句是代码块
+elif a == 0:
+    print("|a| =", a)
+else:  
     print("|a| =", -a)
+
+print("----------------------循环---------------------")
+names = ['Micheal', 'Bob', 'Tracy']
+for name in names:
+    print(name)
+print("range(5)=%s list(range(5))=%s" %(range(5), list(range(5))))
+sum = 0
+for x in range(101):
+    sum = sum + x
+    print("sum_temp=", sum)
+print("sum=", sum)
+
+n = 1
+while n <= 100:
+    if n >10:
+        break
+    print("n=", n)
+    n = n + 1
+print('END')
+
+n = 0
+while n < 10:
+    n = n + 1
+    if n % 2 == 0:
+        continue
+    print(n)
+print('END')
+
+print("---------------------dict字典-------------------")
+d = {'Micheal':95, 'Bob':75, 'Tracy':85}
+print("dict=", d)
+
+#print("Thomas", d['Thomas'])  等于Thomas的key不存在，dict报错
+#调用之前最好判断一下
+if 'Thomas' in d:
+    ("Thomas", d['Thomas'])
+#通过dict提供的get()方法也可以获取value，如果key不存在，可以返回None，或者自己指定的value
+print("d.get('Thomas')=%s  d.get('Thomas',-1)=%s" %(d.get('Thomas'),d.get('Thomas',-1)))
+
+d.pop('Bob')
+print("after d.pop('Bob') dict=", d)
+
+print('在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key')
+key = [1, 2, 3]
+#d[key] = 'a list'  报错
+
+
+
+
+
+
+
+
+
+    
