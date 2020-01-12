@@ -171,6 +171,7 @@ while n < 10:
     print(n)
 print('END')
 
+
 print("---------------------dict字典-------------------")
 d = {'Micheal':95, 'Bob':75, 'Tracy':85}
 print("dict=", d)
@@ -190,6 +191,19 @@ key = [1, 2, 3]
 #d[key] = 'a list'  报错
 
 
+print("-----------------------set----------------------")
+s = set([1, 2, 3])
+print("set([1, 2, 3])=", s)
+s = set([1, 1, 2, 2, 3])
+print("set([1, 1, 2, 2, 3])=", s)
+s.add(4)
+print("s.add(4)后s=", s)
+s.remove(4)
+print("s.remove(4)后s=", s)
+s1 = set([1, 2, 3])
+s2 = set([2, 3, 4])
+print("set([1,2,3]) & set([2,3,4]) =", s1 & s2)
+print("set([1,2,3]) | set([2,3,4]) =", s1 | s2)
 
 
 
