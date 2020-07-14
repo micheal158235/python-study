@@ -32,17 +32,15 @@
   
 6 cmake makefile shell脚本 (Perl Ruby Go)
 
-7 mysql sqlite redis
+7 git svn
 
-8 git svn
+8 json xml html css javascript
 
-9 json xml html css javascript
+9 操作系统及CPU体系结构
 
-10 操作系统及CPU体系结构
+10 编译器和调试器
 
-11 编译器和调试器
-
-12 生产环境问题跟踪：DTrace/SystemTap
+11 生产环境问题跟踪：DTrace/SystemTap
 
 ------------------------嵌入式软件----------------------------------
 1 uCOS FreeRTOS
@@ -85,6 +83,25 @@
 
 2 opencv opengl opencl kuda
 
+------------------------------数据库--------------------------------
+1 关系型数据库
+  1.1 Mysql 
+  1.2 SQLite 
+  1.3 SQLServer
+  1.4 Oracle
+  1.5 DB2
+  1.6 PostgreSQL
+2 非关系型数据库
+  2.1 redis
+  2.2 MongoDB
+  2.3 Memcaced
+  2.4 Hbase
+
+----------------------------web服务器-------------------------------
+1 主流服务器
+  1.1 IIs
+  1.2 Nginx
+  1.3 Apache
 
 
 
